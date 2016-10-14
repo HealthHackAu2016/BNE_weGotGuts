@@ -1,0 +1,19 @@
+So here are some ways to do what I am talking about
+Im a bit jealous as I would like to be there!
+ 
+matlab
+https://github.com/toshiakit/Analyzing-Fitness-Data-from-Wearable-Devices-in-MATLAB/blob/master/README.md
+ 
+a resource
+http://awearable.tumblr.com/post/115835279113/the-datasets
+ 
+scipy / numpy
+ 
+an r approach
+https://rstudio-pubs-static.s3.amazonaws.com/147426_8b611cc95c8043f08113e8e0f4f603ea.html
+ 
+test data
+https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv
+ 
+training data
+https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv
