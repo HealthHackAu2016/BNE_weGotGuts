@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" language="en">We've Got Guts</string>
+    <string name="app_name" language="en">We\'ve Got Guts</string>
     <string name="action_settings">Settings</string>
     <string name="wellbeing">Patient’s general well-being (for the previous day)</string>
     <string name="arthralgia">Arthralgia</string>
