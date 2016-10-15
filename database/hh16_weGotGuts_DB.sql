@@ -37,7 +37,7 @@ DROP TABLE IF EXISTS `hh_guts_public`.`tibdocreading` ;
 
 CREATE TABLE IF NOT EXISTS `hh_guts_public`.`tibdocreading` (
   `idResponder` VARCHAR(45) NOT NULL,
-  `Reading` VARCHAR(45) NOT NULL,
+  `Reading` FLOAT NOT NULL,
   `dtSubmit` DATETIME NOT NULL,
   PRIMARY KEY (`idResponder`, `dtSubmit`),
   CONSTRAINT `RespReading`
@@ -56,7 +56,7 @@ DROP TABLE IF EXISTS `hh_guts_public`.`tsurveyreshbi` ;
 
 CREATE TABLE IF NOT EXISTS `hh_guts_public`.`tsurveyreshbi` (
   `idResponder` VARCHAR(45) NOT NULL,
-  `dtSubmit` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `dtSubmit` DATETIME NOT NULL,
   `genWellbeing` INT(1) NULL DEFAULT NULL,
   `abdPain` INT(1) NULL DEFAULT NULL,
   `lqdStoolFreq` INT(10) NULL DEFAULT NULL,
