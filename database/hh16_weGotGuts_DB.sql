@@ -37,7 +37,7 @@ DROP TABLE IF EXISTS `hh_guts_public`.`tibdocreading` ;
 
 CREATE TABLE IF NOT EXISTS `hh_guts_public`.`tibdocreading` (
   `idResponder` VARCHAR(45) NOT NULL,
-  `Reading` VARCHAR(45) NOT NULL,
+  `Reading` FLOAT NOT NULL,
   `dtSubmit` DATETIME NOT NULL,
   PRIMARY KEY (`idResponder`, `dtSubmit`),
   CONSTRAINT `RespReading`
