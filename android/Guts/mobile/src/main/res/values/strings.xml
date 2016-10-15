@@ -7,14 +7,14 @@
 
     <!-- HBI -->
     <string name="wellbeing">General well-being</string>
-    <string name="arthralgia">Painful and swollen joints</string>
+    <string name="arthralgia">Arthralgia: Painful and swollen joints</string>
     <string name="uveitis">Uveitis: Sore, red and swollen eyes</string>
     <string name="erythema_nodosum">Erythema nodosum: Painful red rash</string>
     <string name="aphthous_ulcers">Mouth ulcers</string>
     <string name="pyoderma_gangrenosum">Pyoderma gangrenosum: Deep, painful, purple skin ulcers</string>
-    <string name="anal_fissure">anal_fissure</string>
-    <string name="new_fistula">new fistula</string>
-    <string name="abscess">Anal fissures or abscesses</string>
+    <string name="anal_fissure">Anal fissures - tear or breakdown in the skin around the anus </string>
+    <string name="new_fistula">Fistula - abnormal opening onto your skin near your anus that may drain fluid.</string>
+    <string name="abscess">Abscess - Painful</string>
     <string name="complications">Complications</string>
     <string name="title_activity_settings">Settings</string>
 

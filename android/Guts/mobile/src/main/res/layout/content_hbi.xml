@@ -13,7 +13,7 @@ app:layout_behavior="@string/appbar_scrolling_view_behavior"
 tools:context="healthhackau2016.guts.hbi"
 tools:showIn="@layout/activity_hbi">
 
-<LinearLayout
+    <LinearLayout
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -48,10 +48,10 @@ tools:showIn="@layout/activity_hbi">
             android:layout_weight="1" />
 
         <TextView
-            android:text="Very Bad"
+            android:text="Terrible"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView4"
+            android:id="@+id/textView6"
             android:layout_weight="1"
             android:textAlignment="textEnd" />
 
@@ -69,17 +69,17 @@ tools:showIn="@layout/activity_hbi">
         android:layout_height="wrap_content">
 
         <TextView
-            android:text="Very Well"
+            android:text="none"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView5"
+            android:id="@+id/textView7"
             android:layout_weight="1" />
 
         <TextView
-            android:text="Very Bad"
+            android:text="severe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView4"
+            android:id="@+id/textView8"
             android:layout_weight="1"
             android:textAlignment="textEnd" />
 
@@ -94,6 +94,19 @@ tools:showIn="@layout/activity_hbi">
         android:id="@+id/seekBar2" />
 
     <TextView
+        android:text="Number of liquid stools:"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/LiquidStools" />
+
+        <EditText
+            android:layout_width="178dp"
+            android:layout_height="18dp"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/NumberLiquidStools" />
+
+        <TextView
         android:text="Abdominal Mass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -107,27 +120,50 @@ tools:showIn="@layout/activity_hbi">
         android:progress="0"
         android:id="@+id/seekBar4" />
 
-    <LinearLayout
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:textAlignment="center">
+
+            <TextView
+                android:text="@string/none"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView9"
+                android:layout_weight="1"
+                android:textAlignment="textStart" />
+
+            <TextView
+                android:text="Dubious"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView11"
+                android:layout_weight="0.36" />
+
+            <TextView
+                android:text="Definite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView10"
+                android:layout_weight="0.36"
+                android:textAlignment="textEnd" />
+
+            <TextView
+                android:text="Tender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView12"
+                android:layout_weight="0.39"
+                android:textAlignment="textEnd" />
+        </TableRow>
+
+        <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:text="Very Well"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView5"
-            android:layout_weight="1" />
-
-        <TextView
-            android:text="Very Bad"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView4"
-            android:layout_weight="1"
-            android:textAlignment="textEnd" />
-
-    </LinearLayout>
+        </LinearLayout>
 
     <TextView
         android:text="@string/complications"
@@ -148,12 +184,40 @@ tools:showIn="@layout/activity_hbi">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/checkBoxUveitis" />
+
     <CheckBox
         android:text="@string/erythema_nodosum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/checkBoxErythema"
         />
+
+    <CheckBox
+        android:text="@string/aphthous_ulcers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBoxAphthous" />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBoxPyoderma"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="@string/pyoderma_gangrenosum" />
+
+    <CheckBox
+        android:text="@string/anal_fissure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBoxFissure" />
+
+    <CheckBox
+        android:text="@string/new_fistula"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBoxFistula" />
 
     <Space
         android:layout_width="match_parent"
