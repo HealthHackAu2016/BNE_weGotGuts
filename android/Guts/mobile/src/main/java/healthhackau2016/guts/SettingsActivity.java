@@ -240,6 +240,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
             // guidelines.
             bindPreferenceSummaryToValue(findPreference("sync_frequency"));
         }
+//TODO
 
         @Override
         public boolean onOptionsItemSelected(MenuItem item) {
