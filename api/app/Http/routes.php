@@ -15,10 +15,14 @@ $app->get('/', function () use ($app) {
     return $app->version();
 });
 
-$app->get('/foo', function () use ($app){
+$app->get('/foo', function () use ($app) {
     return '<h1>Hellow world</h1>';
 });
 
 //tsurveyreshpi
-$app->post('tsurveyreshpi/insert','Tsurveyreshpi@insert');
+$app->post('tsurveyreshpi/insert', 'Tsurveyreshpi@insert');
 //End tsurveyreshpi
+
+//TsurveyRESSCCAI
+$app->post('tsurveyressccai/insert', 'TsurveyRESSCCAI@insert');
+//End TsurveyRESSCCAI
