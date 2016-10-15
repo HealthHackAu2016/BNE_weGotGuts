@@ -12,36 +12,26 @@ class TsurveyRESSCCAI extends BaseController
     {
         $idResponder = $request->idResponder;
         $dtSubmit = $request->dtSubmit;
-        $genWellbeing = $request->genWellbeing;
-        $abdPain = $request->abdPain;
-        $lqdStoolFreq = $request->lqdStoolFreq;
-        $adbMass = $request->adbMass;
-        $jointProb = $request->jointProb;
-        $eyeProb = $request->eyeProb;
-        $mouthProb = $request->mouthProb;
-        $skinProbUlcers = $request->skinProbUlcers;
-        $skinProbRedBumps = $request->skinProbRedBumps;
-        $perianalProb = $request->perianalProb;
-        $fistula = $request->fistula;
+        $DBowleFreq = $request->DBowleFreq;
+        $NBowleFreq = $request->NBowleFreq;
+        $urgency = $request->urgency;
+        $blood = $request->blood;
+        $GenWellbeing = $request->GenWellbeing;
+        $Extracolonics = $request->Extracolonics;
 
         try {
-            app('db')->insert('INSERT INTO `tsurveyreshbi`
+            app('db')->insert('INSERT INTO `tSurveyResSCCAI`
                             (`idResponder`,
                             `dtSubmit`,
-                            `genWellbeing`,
-                            `abdPain`,
-                            `lqdStoolFreq`,
-                            `adbMass`,
-                            `jointProb`,
-                            `eyeProb`,
-                            `mouthProb`,
-                            `skinProbUlcers`,
-                            `skinProbRedBumps`,
-                            `perianalProb`,
-                            `fistula`)
+                            `DBowleFreq`,
+                            `NBowleFreq`,
+                            `urgency`,
+                            `blood`,
+                            `GenWellbeing`,
+                            `Extracolonics`)
                             VALUES
-                            (?,?,?,?,?,?,?,?,?,?,?,?,?)',
-                [$idResponder, $dtSubmit, $genWellbeing, $abdPain, $lqdStoolFreq, $adbMass, $jointProb, $eyeProb, $mouthProb, $skinProbUlcers, $skinProbRedBumps, $perianalProb, $fistula]);
+                            (?,?,?,?,?,?,?,?)',
+                [$idResponder, $dtSubmit, $DBowleFreq, $NBowleFreq, $urgency, $blood, $GenWellbeing, $Extracolonics]);
 
         } catch (\Exception $e) {
             $result = array(
