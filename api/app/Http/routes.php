@@ -20,5 +20,5 @@ $app->get('/foo', function () use ($app){
 });
 
 //tsurveyreshpi
-$app->get('tsurveyreshpi/insert','Tsurveyreshpi@insert');
+$app->post('tsurveyreshpi/insert','Tsurveyreshpi@insert');
 //End tsurveyreshpi
