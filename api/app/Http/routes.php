@@ -14,3 +14,11 @@
 $app->get('/', function () use ($app) {
     return $app->version();
 });
+
+$app->get('/foo', function () use ($app){
+    return '<h1>Hellow world</h1>';
+});
+
+//tsurveyreshpi
+$app->get('tsurveyreshpi/insert','Tsurveyreshpi@insert');
+//End tsurveyreshpi
