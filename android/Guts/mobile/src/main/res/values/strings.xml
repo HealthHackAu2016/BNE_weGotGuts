@@ -2,7 +2,6 @@
     <string name="app_name" language="en">We've Got Guts</string>
     <string name="action_settings">Settings</string>
     <string name="wellbeing">Patient’s general well-being (for the previous day)</string>
-    <string name="wellbeing" language="en">Patient’s general well-being (for the previous day)</string>
     <string name="arthralgia">Arthralgia</string>
     <string name="uveitis">Uveitis</string>
     <string name="erythema_nodosum">erythema nodosum</string>
