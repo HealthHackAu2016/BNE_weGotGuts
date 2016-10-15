@@ -81,9 +81,9 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table `hh_guts_public`.`tSurveyResSCCAI`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `hh_guts_public`.`tSurveyResSCCAI` ;
+DROP TABLE IF EXISTS `hh_guts_public`.`tsurveyressccai` ;
 
-CREATE TABLE IF NOT EXISTS `hh_guts_public`.`tSurveyResSCCAI` (
+CREATE TABLE IF NOT EXISTS `hh_guts_public`.`tsurveyressccai` (
   `idResponder` VARCHAR(45) NOT NULL,
   `dtSubmit` DATETIME NOT NULL,
   `DBowleFreq` INT(1) NULL,
