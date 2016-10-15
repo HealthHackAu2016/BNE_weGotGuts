@@ -11,6 +11,9 @@ import android.view.Menu;
 import android.content.Intent;
 import android.view.MenuItem;
 
+
+import java.net.URL;
+import java.net.HttpURLConnection;
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -51,6 +54,21 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, hbi.class);
         startActivity(intent);
+    }
+    public void POSTtest(View v)
+    {
+        //noinspection SimplifiableIfStatement
+        try {
+        URL url = new URL("http://exampleurl.com/");
+        HttpURLConnection client = null;
+
+            client = (HttpURLConnection) url.openConnection();
+            client.setRequestMethod("POST");
+            client.setRequestProperty("Key","Value");
+            client.setDoOutput(true);
+        }
+        catch (Exception e)
+        {}
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
