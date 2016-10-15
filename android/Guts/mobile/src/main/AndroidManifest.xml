@@ -22,7 +22,15 @@
         </activity>
         <activity
             android:name=".SettingsActivity"
-            android:label="@string/title_activity_settings"></activity>
+            android:label="@string/title_activity_settings" />
+        <activity
+            android:name=".sccai"
+            android:label="@string/title_activity_sccai"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".hbi"
+            android:label="@string/title_activity_hbi"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
