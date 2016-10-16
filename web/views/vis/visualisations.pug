@@ -34,11 +34,16 @@ block content
     //- var _data=#{data}
     var _data=JSON.parse('!{data}');
 
+    for (var i = 0; i < _data.length; i++) {
+      var x = _data[i][0];
+      _data[i][0] = new Date(_data[i][0]);
+    }
+
     new Dygraph(document.getElementById("GutsGraph"),
-             _data,
-             {
-               labels: [ "Date", "Calpro", "HBI" ]
-             });
+         _data,
+         {
+           labels: [ "Date", "Calpro", "HBI" ]
+         });
   //- script.
   //-   var featherEditor = new Aviary.Feather({
   //-     apiKey: 'd427cf051abb47f689171eff5c31e36d',
