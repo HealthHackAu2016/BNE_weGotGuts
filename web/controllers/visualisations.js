@@ -52,7 +52,7 @@ and tibdocreading.idResponder = "C0077"`
         //process row
     }, function(err) {
         // if any of the file processing produced an error, err would equal that error
-        connection.end();
+        // connection.end();
         if( err ) {
           // One of the iterations produced an error.
           // All processing will now stop.
