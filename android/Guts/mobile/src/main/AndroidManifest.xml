@@ -3,7 +3,7 @@
     package="healthhackau2016.guts">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -25,7 +25,7 @@
             android:label="@string/title_activity_settings" />
         <activity
             android:name=".sccai"
-            android:label="@string/title_activity_sccai"
+            android:label="@string/sccai"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".hbi"

@@ -23,11 +23,12 @@
     <string name="sccaiq1">(1) Over the past week, what is your average number of bowel movements during the day (not including night time)?</string>
     <string name="sccaiq2">(2) Over the past week, what is your average number of bowel movements during the night?</string>
     <string name="sccaiq3">(3) Over the past week, what has been your urgency of defecation?</string>
+    <string name="sccaiq4">(4) Over the past week, how much blood is in your stool?</string>
     <string name="norush">No rush</string>
     <string name="hurry">Hurry</string>
     <string name="Immediately">Immediately</string>
     <string name="Incontinence">Incontinence – stool leaked out before you could get to a toilet</string>
-    <string name="sccaiq4">(4) Over the past week, what has been the amount and frequency of blood in your stool?</string>
+
 
     <string name="small_traces">Small traces</string>
     <string name="occ_bloody">Occasionally obviously bloody</string>
