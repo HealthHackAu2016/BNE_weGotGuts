@@ -47,6 +47,7 @@ and tibdocreading.idResponder = "C0077"`
     async.each(rows, function(row, callback) {
       console.log(rows);
       _data.push(row);
+      callback();
         //process row
     }, function(err) {
         // if any of the file processing produced an error, err would equal that error
