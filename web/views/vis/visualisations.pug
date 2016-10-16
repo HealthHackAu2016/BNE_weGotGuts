@@ -6,20 +6,33 @@ block content
       i.fa.fa-picture-o
       | Visualisations
 
-  #GutsGraph
+  #CalproGraph
+  #HBIGraph
 
   script(src='//cdnjs.cloudflare.com/ajax/libs/dygraph/1.1.1/dygraph-combined.js')
   script.
     //- var _data=#{data}
-    var _data=JSON.parse('!{data}');
+    var _calpro=JSON.parse('!{calpro}');
+    var _hbi=JSON.parse('!{hbi}');
 
-    for (var i = 0; i < _data.length; i++) {
-      var x = _data[i][0];
-      _data[i][0] = new Date(_data[i][0]);
+    for (var i = 0; i < _calpro.length; i++) {
+      var x = _calpro[i][0];
+      _calpro[i][0] = new Date(_calpro[i][0]);
     }
 
-    new Dygraph(document.getElementById("GutsGraph"),
-         _data,
+    for (var i = 0; i < _hbi.length; i++) {
+      var x = _hbi[i][0];
+      _hbi[i][0] = new Date(_hbi[i][0]);
+    }
+
+    new Dygraph(document.getElementById("CalproGraph"),
+         _calpro,
          {
-           labels: [ "Date", "Calpro", "HBI" ]
+           labels: [ "Date", "Calpro"]
          });
+
+   new Dygraph(document.getElementById("HBIGraph"),
+        _hbi,
+        {
+          labels: [ "Date", "HBI Score"]
+        });

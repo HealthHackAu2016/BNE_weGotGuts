@@ -34,19 +34,21 @@ tsurveyreshbi.skinProbUlcers +
 tsurveyreshbi.skinProbRedBumps +
 tsurveyreshbi.perianalProb +
 tsurveyreshbi.fistula as hbi_score
-from hh_guts_public.tibdocreading, hh_guts_public.tsurveyreshbi
+from hh_guts_public.tibdocreading LEFT JOIN hh_guts_public.tsurveyreshbi
+ON tibdocreading.dtSubmit = tsurveyreshbi.dtSubmit
 where tibdocreading.idResponder = tsurveyreshbi.idResponder
-and tibdocreading.dtSubmit  = tsurveyreshbi.dtSubmit
 and tibdocreading.idResponder = "C0077"`
 
   connection.query(_sql_statement, function(err, rows, fields) {
     if (err) throw err;
 
     console.log('Result: ', rows);
-    var _data = [];
+    var _calpro = [];
+    var _hbi = [];
     async.each(rows, function(row, callback) {
       // console.log('Row',row);
-      _data.push([row.dtSubmit, row.calpro, row.hbi_score]);
+      _calpro.push([row.dtSubmit, row.calpro]);
+      _hbi.push([row.dtSubmit, row.hbi_score]);
       callback();
         //process row
     }, function(err) {
@@ -60,7 +62,8 @@ and tibdocreading.idResponder = "C0077"`
           console.log(_data);
           res.render('vis/visualisations', {
             title: 'Patient Visualisations',
-            data: JSON.stringify(_data)
+            calpro: JSON.stringify(_calpro),
+            hbi: JSON.stringify(_hbi)
           });
         }
     });
