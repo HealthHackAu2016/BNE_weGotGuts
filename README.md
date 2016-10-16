@@ -21,7 +21,7 @@ This a a Lumen (PHP) based API which requires:
 
 The database is a MySQL database, with SQL scripts stored in the `database` folder.
 
-### Web
+### Web (Patient Visualisations)
 
 The patient-focussed web interface is stored in the `web` directory.
 
@@ -31,6 +31,10 @@ It is a NodeJS-based web application and requires:
   - MongoDB
 
 *Additional requirements and setup information is available in the  README.md file in the `web` folder*
+
+## Qlik Sense Desktop (Clinician Visualisations)
+
+The clinician-focussed Qlik Sense BI insights platform has its configuration/settings file stored in the `clinicial_visualisation` folder.
 
 ## “We’ve Got Guts” Team Members:
  - Mark Promnitz
