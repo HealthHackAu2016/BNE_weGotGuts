@@ -11,6 +11,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.SeekBar;
 
 import java.text.SimpleDateFormat;
@@ -29,23 +31,24 @@ public class hbi extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Sending", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
                 SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
                 String idResponder = SP.getString("idResponder", "no id found!?");
                 String urlParameters = "idResponder="+idResponder +
                         "&dtSubmit=" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()) +
-                        "&genWellbeing=" +
+                        "&genWellbeing=" +((SeekBar)findViewById(R.id.seekBar)).getProgress() +
                         "&abdPain=" +((SeekBar)findViewById(R.id.seekBarHBIAbdominal)).getProgress() +
-                        "&lqdStoolFreq=" +
-                        "&adbMass=" +
-                        "&jointProb=" +
-                        "&eyeProb=" +
-                        "&mouthProb=" +
-                        "&skinProbUlcers=" +
-                        "&skinProbRedBumps=" +
-                        "&perianalProb=" +
-                        "&fistula=";
+                        "&lqdStoolFreq=" + ((EditText)findViewById(R.id.NumberLiquidStools)).getText() +
+                        "&adbMass=" +((SeekBar)findViewById(R.id.seekBar4)).getProgress() +
+                        "&jointProb=" +(((CheckBox)findViewById(R.id.checkBoxArthralgia)).isChecked() ? 1 : 0 ) +
+                        "&eyeProb=" +(((CheckBox)findViewById(R.id.checkBoxUveitis)).isChecked() ? 1 : 0 ) +
+                        "&mouthProb=" +(((CheckBox)findViewById(R.id.checkBoxAphthous)).isChecked() ? 1 : 0 ) +
+                        "&skinProbUlcers=" +(((CheckBox)findViewById(R.id.checkBoxPyoderma)).isChecked() ? 1 : 0 ) +
+                        "&skinProbRedBumps=" + (((CheckBox)findViewById(R.id.checkBoxErythema)).isChecked() ? 1 : 0 ) +
+                        "&perianalProb=" + (((CheckBox)findViewById(R.id.checkBoxFissure)).isChecked() ? 1 : 0 ) +
+                        "&fistula=" + (((CheckBox)findViewById(R.id.checkBoxFistula)).isChecked() ? 1 : 0 );
+                new PostClass(getBaseContext(),urlParameters).execute();
             }
         });
     }
