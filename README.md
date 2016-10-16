@@ -47,3 +47,17 @@ Source data and problem statement and information from the problem owner has bee
  - Lisa Stokes
  - Komal Bandi
  - Jake Begun
+
+## Final Thoughts
+
+You will likely find references to wevegotguts.com thoughout this repo. Yes, we registered a domain name :)  
+
+Endpoints we setup were:
+
+ - api.wevegotguts.com
+ - www.wevegotguts.com
+ - wevegotguts.com
+
+We also used https://letsencrypt.org/ for the HTTPS certificates! 
+
+
