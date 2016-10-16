@@ -113,7 +113,6 @@ public class MainActivity extends AppCompatActivity {
                 String idResponder = SP.getString("idResponder", "no id found!?");
     //            final TextView outputView = (TextView) findViewById(R.id.showOutput);
                 URL url = new URL("https://api.wevegotguts.com/api/public/index.php/tsurveyreshbi/insert");
-
                 HttpURLConnection connection = (HttpURLConnection)url.openConnection();
                 String urlParameters = "idResponder="+idResponder +
                         "&dtSubmit=" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()) +

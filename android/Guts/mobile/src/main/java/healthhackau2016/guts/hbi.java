@@ -1,7 +1,9 @@
 package healthhackau2016.guts;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +11,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.SeekBar;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class hbi extends AppCompatActivity {
 
@@ -25,6 +31,21 @@ public class hbi extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+                String idResponder = SP.getString("idResponder", "no id found!?");
+                String urlParameters = "idResponder="+idResponder +
+                        "&dtSubmit=" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()) +
+                        "&genWellbeing=" +
+                        "&abdPain=" +((SeekBar)findViewById(R.id.seekBarHBIAbdominal)).getProgress() +
+                        "&lqdStoolFreq=" +
+                        "&adbMass=" +
+                        "&jointProb=" +
+                        "&eyeProb=" +
+                        "&mouthProb=" +
+                        "&skinProbUlcers=" +
+                        "&skinProbRedBumps=" +
+                        "&perianalProb=" +
+                        "&fistula=";
             }
         });
     }

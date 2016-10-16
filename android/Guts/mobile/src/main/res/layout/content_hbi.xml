@@ -95,20 +95,30 @@ tools:showIn="@layout/activity_hbi">
         android:layout_height="wrap_content"
         android:max="3"
         android:progress="0"
-        android:id="@+id/seekBar2" />
+        android:id="@+id/seekBarHBIAbdominal" />
 
-    <TextView
-        android:text="Number of liquid stools:"
-        android:layout_width="175dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/LiquidStools" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <EditText
-            android:layout_width="178dp"
-            android:layout_height="18dp"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/NumberLiquidStools" />
+            <TextView
+            android:text="Number of liquid stools:"
+            android:layout_width="175dp"
+            android:layout_height="match_parent"
+            android:id="@+id/LiquidStools"
+                android:layout_weight="1" />
+
+            <EditText
+                android:layout_width="178dp"
+                android:layout_height="match_parent"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/NumberLiquidStools"
+                android:singleLine="false"
+                android:layout_weight="1"
+                android:text="0" />
+        </LinearLayout>
 
         <TextView
         android:text="Abdominal Mass"
