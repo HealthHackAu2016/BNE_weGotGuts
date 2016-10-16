@@ -22,6 +22,7 @@ block content
     //- var _data=#{data}
     var _calpro=JSON.parse('!{calpro}');
     var _hbi=JSON.parse('!{hbi}');
+    var _fbSleep=JSON.parse('!{fbsleep}');
 
     for (var i = 0; i < _calpro.length; i++) {
       var x = _calpro[i][0];
@@ -31,6 +32,11 @@ block content
     for (var i = 0; i < _hbi.length; i++) {
       var x = _hbi[i][0];
       _hbi[i][0] = new Date(_hbi[i][0]);
+    }
+
+    for (var i = 0; i < _fbSleep.length; i++) {
+      var x = _fbSleep[i][0];
+      _fbSleep[i][0] = new Date(_fbSleep[i][0]);
     }
 
     new Dygraph(document.getElementById("CalproGraph"),

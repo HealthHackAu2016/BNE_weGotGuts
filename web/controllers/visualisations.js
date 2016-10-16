@@ -42,7 +42,7 @@ tsurveyreshbi.fistula as hbi_score
 from hh_guts_public.tsurveyreshbi left outer join  hh_guts_public.tibdocreading on tsurveyreshbi.idResponder = tibdocreading.idResponder and tibdocreading.dtSubmit = tsurveyreshbi.dtSubmit
 where tsurveyreshbi.idResponder = 'C0077'`;
 
-var fbsleep_sql_statement = ``
+var fbsleep_sql_statement = "SELECT dtRecorded, NoAwakenings FROM hh_guts_public.tfsleep WHERE idResponder = 'C0077'"
 var fbactivity_sql_statement = ``
 
   connection.query(calpro_sql_statement, function(err, calpro_rows, fields) {
@@ -83,14 +83,31 @@ var fbactivity_sql_statement = ``
               } else {
                 console.log('All hbi results have been processed successfully');
 
+                connection.query(fbsleep_sql_statement, function(err, fbsleep_rows, fields) {
+                  if (err) throw err;
+                  var _fbsleep = [];
+                  async.each(fbsleep_rows, function(row, fbsleep_callback) {
+                    _fbsleep.push([row.dtRecorded, row.NoAwakenings]);
+                    fbsleep_callback();
+                  }, function(err) {
+                    if( err ) {
+                      console.log('Error processing fitbit sleep results:', err);
+                    } else {
+                      console.log('All fitbit sleep results have been processed successfully');
 
+                      res.render('vis/visualisations', {
+                        title: 'Patient Visualisations',
+                        calpro: JSON.stringify(_calpro),
+                        hbi: JSON.stringify(_hbi),
+                        fbsleep: JSON.stringify(_fbsleep)
+                      });
 
-
-                res.render('vis/visualisations', {
-                  title: 'Patient Visualisations',
-                  calpro: JSON.stringify(_calpro),
-                  hbi: JSON.stringify(_hbi)
+                    }
+                  });
                 });
+
+
+
 
               }
             });
