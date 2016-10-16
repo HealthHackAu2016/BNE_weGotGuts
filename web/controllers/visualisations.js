@@ -15,7 +15,7 @@ connection.connect();
 //   console.log('The solution is: ', rows[0].solution);
 // });
 
-connection.end();
+// connection.end();
 
 
 exports.getVisualisations = (req, res) => {
@@ -50,6 +50,7 @@ and tibdocreading.idResponder = "C0077"`
         //process row
     }, function(err) {
         // if any of the file processing produced an error, err would equal that error
+        connection.end();
         if( err ) {
           // One of the iterations produced an error.
           // All processing will now stop.
