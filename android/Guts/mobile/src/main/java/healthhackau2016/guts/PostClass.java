@@ -3,6 +3,7 @@ package healthhackau2016.guts;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.os.SystemClock;
 import android.preference.PreferenceManager;
 import android.widget.Toast;
 
@@ -22,9 +23,14 @@ import java.util.Date;
 
 Context baseContext;
      String postdata;
-    public PostClass(Context c, String pd) {
+     URL url;
+    public PostClass(Context c, String pd, String u) {
         baseContext = c;
         postdata = pd;
+        try {
+            url = new URL(u);
+        }catch (Exception e){
+            e.printStackTrace();}
     }
 
 
@@ -34,7 +40,7 @@ Context baseContext;
             SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(baseContext);
             String idResponder = SP.getString("idResponder", "no id found!?");
             //            final TextView outputView = (TextView) findViewById(R.id.showOutput);
-            URL url = new URL("https://api.wevegotguts.com/api/public/index.php/tsurveyreshbi/insert");
+
             HttpURLConnection connection = (HttpURLConnection)url.openConnection();
             String urlParameters = postdata;
             connection.setRequestMethod("POST");

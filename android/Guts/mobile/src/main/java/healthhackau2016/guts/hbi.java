@@ -15,6 +15,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.SeekBar;
 
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -48,7 +49,7 @@ public class hbi extends AppCompatActivity {
                         "&skinProbRedBumps=" + (((CheckBox)findViewById(R.id.checkBoxErythema)).isChecked() ? 1 : 0 ) +
                         "&perianalProb=" + (((CheckBox)findViewById(R.id.checkBoxFissure)).isChecked() ? 1 : 0 ) +
                         "&fistula=" + (((CheckBox)findViewById(R.id.checkBoxFistula)).isChecked() ? 1 : 0 );
-                new PostClass(getBaseContext(),urlParameters).execute();
+                new PostClass(getBaseContext(),urlParameters,"https://api.wevegotguts.com/api/public/index.php/tsurveyreshbi/insert").execute();
             }
         });
     }
