@@ -45,14 +45,12 @@ and tibdocreading.idResponder = "C0077"`
     console.log('Result: ', rows);
     var _data = [];
     async.each(rows, function(row, callback) {
-      console.log('Row',row);
-      // _data.push(row);
+      // console.log('Row',row);
       _data.push([row.dtSubmit, row.calpro, row.hbi_score]);
       callback();
         //process row
     }, function(err) {
         // if any of the file processing produced an error, err would equal that error
-        // connection.end();
         if( err ) {
           // One of the iterations produced an error.
           // All processing will now stop.
