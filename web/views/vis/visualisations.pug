@@ -6,8 +6,11 @@ block content
       i.fa.fa-picture-o
       | Visualisations
 
-  #CalproGraph
-  #HBIGraph
+  .row
+    .col-sm-6
+      #CalproGraph
+    .col-sm-6
+      #HBIGraph
 
   script(src='//cdnjs.cloudflare.com/ajax/libs/dygraph/1.1.1/dygraph-combined.js')
   script.
@@ -28,11 +31,21 @@ block content
     new Dygraph(document.getElementById("CalproGraph"),
          _calpro,
          {
-           labels: [ "Date", "Calpro"]
+           labels: [ "Date", "Calpro"],
+           legend: 'always',
+           title: 'Gut Information',
+           titleHeight: 32,
+           ylabel: 'Calpro',
+           xlabel: 'Date'
          });
 
    new Dygraph(document.getElementById("HBIGraph"),
         _hbi,
         {
-          labels: [ "Date", "HBI Score"]
+          labels: [ "Date", "HBI Score"],
+          legend: 'always',
+          title: 'Disease Activity',
+          titleHeight: 32,
+          ylabel: 'HBI Score',
+          xlabel: 'Date'
         });
