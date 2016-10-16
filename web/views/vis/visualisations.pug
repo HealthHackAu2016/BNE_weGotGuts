@@ -11,12 +11,21 @@ block content
       #CalproGraph
     .col-sm-6
       #HBIGraph
+  .row
+    hr
+  .row
+    .col-sm-6
+      #FitbitSleep
+    .col-sm-6
+      #FitbitActivities
 
   script(src='//cdnjs.cloudflare.com/ajax/libs/dygraph/1.1.1/dygraph-combined.js')
   script.
     //- var _data=#{data}
     var _calpro=JSON.parse('!{calpro}');
     var _hbi=JSON.parse('!{hbi}');
+    var _fbSleep=JSON.parse('!{fbsleep}');
+    var _fbActivities=JSON.parse('!{fbactivities}');
 
     for (var i = 0; i < _calpro.length; i++) {
       var x = _calpro[i][0];
@@ -28,11 +37,20 @@ block content
       _hbi[i][0] = new Date(_hbi[i][0]);
     }
 
+    for (var i = 0; i < _fbSleep.length; i++) {
+      var x = _fbSleep[i][0];
+      _fbSleep[i][0] = new Date(_fbSleep[i][0]);
+    }
+
+    for (var i = 0; i < _fbActivities.length; i++) {
+      var x = _fbActivities[i][0];
+      _fbActivities[i][0] = new Date(_fbActivities[i][0]);
+    }
+
     new Dygraph(document.getElementById("CalproGraph"),
          _calpro,
          {
            labels: [ "Date", "Calpro"],
-           legend: 'always',
            title: 'Gut Information',
            titleHeight: 32,
            ylabel: 'Calpro',
@@ -43,9 +61,28 @@ block content
         _hbi,
         {
           labels: [ "Date", "HBI Score"],
-          legend: 'always',
           title: 'Disease Activity',
           titleHeight: 32,
           ylabel: 'HBI Score',
           xlabel: 'Date'
         });
+
+    new Dygraph(document.getElementById("FitbitSleep"),
+         _fbSleep,
+         {
+           labels: [ "Date", "Awakenings"],
+           title: 'Fitbit Number of Awakenings',
+           titleHeight: 32,
+           ylabel: 'Awakenings',
+           xlabel: 'Date'
+         });
+
+     new Dygraph(document.getElementById("FitbitActivities"),
+          _fbActivities,
+          {
+            labels: [ "Date", "Activity Calories"],
+            title: 'Fitbit Activity Calories',
+            titleHeight: 32,
+            ylabel: 'Calories',
+            xlabel: 'Date'
+          });
