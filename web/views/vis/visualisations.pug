@@ -9,7 +9,7 @@ block content
 
   p #{data}
 
-
+  #GutsGraph
 
   //- .btn-group.btn-group-justified
   //-   a.btn.btn-primary(href='http://developers.aviary.com/docs/web/setup-guide#constructor', target='_blank')
@@ -30,6 +30,14 @@ block content
   //- img#myimage(src='http://orig11.deviantart.net/1db8/f/2016/106/b/7/light_perhaps_by_milliganvick-d9z4q8m.jpg', width=600)
 
   script(src='//cdnjs.cloudflare.com/ajax/libs/dygraph/1.1.1/dygraph-combined.js')
+  script.
+    var _data="#{data}"
+
+    new Dygraph(document.getElementById("GutsGraph"),
+             _data,
+             {
+               labels: [ "Date", "Calpro", "HBI" ]
+             });
   //- script.
   //-   var featherEditor = new Aviary.Feather({
   //-     apiKey: 'd427cf051abb47f689171eff5c31e36d',
