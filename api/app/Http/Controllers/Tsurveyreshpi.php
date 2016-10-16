@@ -6,7 +6,7 @@ use Laravel\Lumen\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
 use LOG;
 
-class Tsurveyreshpi extends BaseController
+class Tsurveyreshbi extends BaseController
 {
     public function insert(Request $request)
     {

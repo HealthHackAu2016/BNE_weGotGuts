@@ -19,9 +19,9 @@ $app->get('/foo', function () use ($app) {
     return '<h1>Hellow world</h1>';
 });
 
-//tsurveyreshpi
-$app->post('tsurveyreshpi/insert', 'Tsurveyreshpi@insert');
-//End tsurveyreshpi
+//tsurveyreshbi
+$app->post('tsurveyreshbi/insert', 'Tsurveyreshbi@insert');
+//End tsurveyreshbi
 
 //TsurveyRESSCCAI
 $app->post('tsurveyressccai/insert', 'TsurveyRESSCCAI@insert');
