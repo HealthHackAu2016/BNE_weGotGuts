@@ -21,7 +21,7 @@ connection.connect();
 exports.getVisualisations = (req, res) => {
 
   var _sql_statement = `select tibdocreading.idResponder as idResponder,
-tibdocreading.dtSubmit as dtSubmit,
+DATE_FORMAT(tibdocreading.dtSubmit,'%Y/%m/%d') as dtSubmit,
 tibdocreading.Reading as calpro,
 tsurveyreshbi.genWellbeing +
 tsurveyreshbi.abdPain +
