@@ -1,8 +1,5 @@
-const dygraphs = require('dygraphs');
 const mysql = require('mysql');
 const async = require('async');
-
-
 
 var connection = mysql.createConnection({
   host     : 'localhost',
@@ -40,7 +37,7 @@ tsurveyreshbi.fistula as hbi_score
 from hh_guts_public.tibdocreading, hh_guts_public.tsurveyreshbi
 where tibdocreading.idResponder = tsurveyreshbi.idResponder
 and tibdocreading.dtSubmit  = tsurveyreshbi.dtSubmit
-and tibdocreading.idResponder = "C0089"`
+and tibdocreading.idResponder = "C0077"`
 
   connection.query(_sql_statement, function(err, rows, fields) {
     if (err) throw err;
