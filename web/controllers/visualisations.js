@@ -45,8 +45,9 @@ and tibdocreading.idResponder = "C0077"`
     console.log('Result: ', rows);
     var _data = [];
     async.each(rows, function(row, callback) {
-      console.log(rows);
-      _data.push(row);
+      // console.log(rows);
+      // _data.push(row);
+      _data.push([row.RowDataPacket.dtSubmit, row.RowDataPacket.calpro, row.RowDataPacket.hbi_score]);
       callback();
         //process row
     }, function(err) {
@@ -58,6 +59,7 @@ and tibdocreading.idResponder = "C0077"`
           console.log('Error processing results:', err);
         } else {
           console.log('All results have been processed successfully');
+          console.log(_data);
           res.render('vis/visualisations', {
             title: 'Patient Visualisations',
             data: _data
