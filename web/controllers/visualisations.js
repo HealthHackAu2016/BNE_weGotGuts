@@ -47,7 +47,7 @@ and tibdocreading.idResponder = "C0077"`
     async.each(rows, function(row, callback) {
       console.log('Row',row);
       // _data.push(row);
-      _data.push([row.dtSubmit, row.calpro, row.hbi_score]);
+      _data.push([new Date(row.dtSubmit), row.calpro, row.hbi_score]);
       callback();
         //process row
     }, function(err) {
