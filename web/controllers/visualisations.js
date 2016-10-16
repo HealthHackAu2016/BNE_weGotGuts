@@ -44,7 +44,7 @@ and tibdocreading.idResponder = "C0077"`
 
     console.log('Result: ', rows);
     var _data = [];
-    async.each(rows, function(file, callback) {
+    async.each(rows, function(row, callback) {
       console.log(rows);
       _data.push(row);
         //process row
