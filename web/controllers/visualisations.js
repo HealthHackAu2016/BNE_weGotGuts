@@ -108,15 +108,16 @@ var fbactivity_sql_statement = "SELECT dtRecorded, ActivityCalories from hh_guts
                           } else {
                             console.log('All fitbit activity results have been processed successfully');
 
-
-                      res.render('vis/visualisations', {
-                        title: 'Patient Visualisations',
-                        calpro: JSON.stringify(_calpro),
-                        hbi: JSON.stringify(_hbi),
-                        fbsleep: JSON.stringify(_fbsleep),
-                        fbactivities: JSON.stringify(_fbactivity)
+                            res.render('vis/visualisations', {
+                              title: 'Patient Visualisations',
+                              calpro: JSON.stringify(_calpro),
+                              hbi: JSON.stringify(_hbi),
+                              fbsleep: JSON.stringify(_fbsleep),
+                              fbactivities: JSON.stringify(_fbactivity)
+                            });
+                          }
+                        });
                       });
-
                     }
                   });
                 });
