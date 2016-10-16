@@ -42,7 +42,7 @@ and tibdocreading.idResponder = "C0077"`
   connection.query(_sql_statement, function(err, rows, fields) {
     if (err) throw err;
 
-    console.log('Result: ', rows);
+    // console.log('Result: ', rows);
     var _calpro = [];
     var _hbi = [];
     async.each(rows, function(row, callback) {
@@ -59,7 +59,7 @@ and tibdocreading.idResponder = "C0077"`
           console.log('Error processing results:', err);
         } else {
           console.log('All results have been processed successfully');
-          console.log(_data);
+
           res.render('vis/visualisations', {
             title: 'Patient Visualisations',
             calpro: JSON.stringify(_calpro),
