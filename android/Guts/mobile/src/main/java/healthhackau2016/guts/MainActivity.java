@@ -129,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
                         "&perianalProb=" +
                         "&fistula=";
                 connection.setRequestMethod("POST");
+                connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
                 connection.setRequestProperty("USER-AGENT", "Mozilla/5.0");
                 connection.setRequestProperty("ACCEPT-LANGUAGE", "en-US,en;0.5");
  //               connection.setRequestProperty("idResponder", idResponder);
