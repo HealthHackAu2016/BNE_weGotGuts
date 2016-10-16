@@ -10,6 +10,8 @@ class Tsurveyreshbi extends BaseController
 {
     public function insert(Request $request)
     {
+        app('log')->debug($request);
+        
         $idResponder = $request->idResponder;
         $dtSubmit = $request->dtSubmit;
         $genWellbeing = $request->genWellbeing;
