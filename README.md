@@ -32,9 +32,13 @@ It is a NodeJS-based web application and requires:
 
 *Additional requirements and setup information is available in the  README.md file in the `web` folder*
 
-## Qlik Sense Desktop (Clinician Visualisations)
+### Qlik Sense Desktop (Clinician Visualisations)
 
 The clinician-focussed Qlik Sense BI insights platform has its configuration/settings file stored in the `clinicial_visualisation` folder.
+
+### Data Sources
+
+Source data and problem statement and information from the problem owner has been stored in the `data_sources` folder.
 
 ## “We’ve Got Guts” Team Members:
  - Mark Promnitz
