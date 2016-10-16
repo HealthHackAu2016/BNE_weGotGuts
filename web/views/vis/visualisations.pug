@@ -31,7 +31,8 @@ block content
 
   script(src='//cdnjs.cloudflare.com/ajax/libs/dygraph/1.1.1/dygraph-combined.js')
   script.
-    var _data="#{data}"
+    //- var _data=#{data}
+    var _data=JSON.parse('!{data}');
 
     new Dygraph(document.getElementById("GutsGraph"),
              _data,

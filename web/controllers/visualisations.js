@@ -62,7 +62,7 @@ and tibdocreading.idResponder = "C0077"`
           console.log(_data);
           res.render('vis/visualisations', {
             title: 'Patient Visualisations',
-            data: _data
+            data: JSON.stringify(_data)
           });
         }
     });
