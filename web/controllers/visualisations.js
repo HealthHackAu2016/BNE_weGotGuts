@@ -93,7 +93,7 @@ var fbactivity_sql_statement = ``
                 });
 
               }
-            }
+            });
           });
         }
     });
