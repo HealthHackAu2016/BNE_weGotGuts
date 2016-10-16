@@ -43,7 +43,7 @@ from hh_guts_public.tsurveyreshbi left outer join  hh_guts_public.tibdocreading 
 where tsurveyreshbi.idResponder = 'C0077'`;
 
 var fbsleep_sql_statement = "SELECT dtRecorded, NoAwakenings FROM hh_guts_public.tfsleep WHERE idResponder = 'C0077'"
-var fbactivity_sql_statement = ``
+var fbactivity_sql_statement = "SELECT dtRecorded, ActivityCalories from hh_guts_public.tfbactivities WHERE idResponder = 'C0077'"
 
   connection.query(calpro_sql_statement, function(err, calpro_rows, fields) {
     if (err) throw err;
@@ -95,11 +95,26 @@ var fbactivity_sql_statement = ``
                     } else {
                       console.log('All fitbit sleep results have been processed successfully');
 
+
+                      connection.query(fbactivity_sql_statement, function(err, fbactivity_rows, fields) {
+                        if (err) throw err;
+                        var _fbactivity = [];
+                        async.each(fbactivity_rows, function(row, fbactivity_callback) {
+                          _fbactivity.push([row.dtRecorded, row.ActivityCalories]);
+                          fbactivity_callback();
+                        }, function(err) {
+                          if( err ) {
+                            console.log('Error processing fitbit activity results:', err);
+                          } else {
+                            console.log('All fitbit activity results have been processed successfully');
+
+
                       res.render('vis/visualisations', {
                         title: 'Patient Visualisations',
                         calpro: JSON.stringify(_calpro),
                         hbi: JSON.stringify(_hbi),
-                        fbsleep: JSON.stringify(_fbsleep)
+                        fbsleep: JSON.stringify(_fbsleep),
+                        fbactivities: JSON.stringify(_fbactivity)
                       });
 
                     }

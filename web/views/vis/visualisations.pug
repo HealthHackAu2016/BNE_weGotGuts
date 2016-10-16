@@ -12,6 +12,8 @@ block content
     .col-sm-6
       #HBIGraph
   .row
+    hr
+  .row
     .col-sm-6
       #FitbitSleep
     .col-sm-6
@@ -23,6 +25,7 @@ block content
     var _calpro=JSON.parse('!{calpro}');
     var _hbi=JSON.parse('!{hbi}');
     var _fbSleep=JSON.parse('!{fbsleep}');
+    var _fbActivities=JSON.parse('!{fbactivities}');
 
     for (var i = 0; i < _calpro.length; i++) {
       var x = _calpro[i][0];
@@ -37,6 +40,11 @@ block content
     for (var i = 0; i < _fbSleep.length; i++) {
       var x = _fbSleep[i][0];
       _fbSleep[i][0] = new Date(_fbSleep[i][0]);
+    }
+
+    for (var i = 0; i < _fbActivities.length; i++) {
+      var x = _fbActivities[i][0];
+      _fbActivities[i][0] = new Date(_fbActivities[i][0]);
     }
 
     new Dygraph(document.getElementById("CalproGraph"),
@@ -70,7 +78,7 @@ block content
          });
 
      new Dygraph(document.getElementById("FitbitActivities"),
-          _fbActivites,
+          _fbActivities,
           {
             labels: [ "Date", "Activity Calories"],
             title: 'Fitbit Activity Calories',
